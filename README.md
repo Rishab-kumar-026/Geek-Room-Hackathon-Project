@@ -79,4 +79,7 @@ All of this is wrapped in a smooth, modern UI designed for both desktop and mobi
 
 We integrated their web widget with this snippet:
 
+```html
+<script id="omnidimension-web-widget" async src="https://backend.omnidim.io/web_widget.js?secret_key=YOUR_SECRET_KEY"></script>
+
 
