@@ -21,6 +21,17 @@ Visit the deployed app here 👉 (https://imaginative-fudge-ceeb95.netlify.app)
 
 ---
 
+## 🔗 Omni Dimension AI Integration
+
+> Huge thanks to [**Omni Dimension AI**](https://omnidim.io) for enabling voice + chat-based travel planning.
+
+We integrated their web widget with this snippet:
+
+```html
+<script id="omnidimension-web-widget" async src="https://backend.omnidim.io/web_widget.js?secret_key=YOUR_SECRET_KEY"></script>
+
+```
+
 ## 📌 About the Project
 
 **Local Explorer** is a fully responsive, AI-integrated travel assistant web application that helps tourists:
@@ -73,13 +84,26 @@ All of this is wrapped in a smooth, modern UI designed for both desktop and mobi
 
 ---
 
-## 🔗 Omni Dimension AI Integration
+📂 Folder Structure
+bash
+Copy
+Edit
+/frontend
+  /components
+  /pages
+  /assets
+  /styles
+  /utils
+/backend
+  /routes
+  /controllers
+  /models
+  /data (mock city/tourist place info)
+/public
+.env.example
 
-> Huge thanks to [**Omni Dimension AI**](https://omnidim.io) for enabling voice + chat-based travel planning.
 
-We integrated their web widget with this snippet:
+Made with ❤️ for Hackathons, Travelers, and Explorers ✈️
 
-```html
-<script id="omnidimension-web-widget" async src="https://backend.omnidim.io/web_widget.js?secret_key=YOUR_SECRET_KEY"></script>
 
 
