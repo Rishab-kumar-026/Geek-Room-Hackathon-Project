@@ -11,7 +11,7 @@
 
 ## 📽️ Demo Video
 
-Watch the walkthrough here 👉 : (https://drive.google.com/file/d/1W9ZpGYMQgIOfj_HWMVQPhi_wUQvVAMTt/view?usp=sharing)
+Watch the walkthrough here 👉 : (https://www.loom.com/share/c6a40394ad7c4b2e9416a875354062a0?sid=8817ac71-6c1f-4496-9e88-2822a2ebdbc5)
 
 ---
 
