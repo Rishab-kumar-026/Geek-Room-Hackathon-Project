@@ -4,7 +4,7 @@
 
 > ✈️ Discover your city like never before. Get personalized sightseeing, food, and event suggestions from an AI travel assistant — powered by Omni Dimension AI.
 
-![Local Explorer Hero](https://your-demo-thumbnail-url.com/hero-image.png)
+![Local Explorer Hero](![Image](https://github.com/user-attachments/assets/47376549-472f-4d98-b1bf-45bb032f5751))
 
 ---
 
