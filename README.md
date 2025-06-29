@@ -85,6 +85,7 @@ All of this is wrapped in a smooth, modern UI designed for both desktop and mobi
 ---
 
 🚀 Step-by-Step: Run Local Explorer Locally
+
 ✅ 1. Clone the Repository
 Open your terminal and run:
 
@@ -93,6 +94,7 @@ Copy
 Edit
 git clone https://github.com/your-username/local-explorer.git
 cd local-explorer
+
 ✅ 2. Set Up the Backend
 📁 Navigate to backend folder:
 bash
