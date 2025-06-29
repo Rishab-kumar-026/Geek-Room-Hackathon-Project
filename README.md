@@ -84,25 +84,6 @@ All of this is wrapped in a smooth, modern UI designed for both desktop and mobi
 
 ---
 
-📂 Folder Structure
-bash
-Copy
-Edit
-/frontend
-  /components
-  /pages
-  /assets
-  /styles
-  /utils
-/backend
-  /routes
-  /controllers
-  /models
-  /data (mock city/tourist place info)
-/public
-.env.example
-
-
 Made with ❤️ for Hackathons, Travelers, and Explorers ✈️
 
 
