@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-body text-gray-900 bg-gray-50;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/20 backdrop-blur-md border border-white/30 rounded-xl shadow-xl;
+  }
+  
+  .gradient-bg {
+    background: linear-gradient(135deg, #ff6b35 0%, #f7931e 25%, #14b8a6 75%, #0d9488 100%);
+  }
+  
+  .sunset-gradient {
+    background: linear-gradient(135deg, #ff8a4c 0%, #ff6b35 25%, #ed5a2b 75%, #cc4125 100%);
+  }
+  
+  .ocean-gradient {
+    background: linear-gradient(135deg, #2dd4bf 0%, #14b8a6 25%, #0d9488 75%, #0f766e 100%);
+  }
+  
+  .btn-primary {
+    @apply bg-primary-500 hover:bg-primary-600 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary-500 hover:bg-secondary-600 text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl;
+  }
+  
+  .btn-glass {
+    @apply glass-card text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 transform hover:scale-105 hover:bg-white/30;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl border border-gray-300 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 transition-all duration-300 bg-white/90 backdrop-blur-sm;
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl;
+  }
+  
+  .floating-icon {
+    @apply animate-float;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, #ff6b35, #14b8a6);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(135deg, #ed5a2b, #0d9488);
+}
+
+/* Mapbox styles */
+.mapboxgl-popup-content {
+  @apply rounded-xl shadow-xl border-0 p-4;
+}
+
+.mapboxgl-popup-tip {
+  border-top-color: white !important;
+}
+
+/* Three.js canvas styles */
+.three-canvas {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
