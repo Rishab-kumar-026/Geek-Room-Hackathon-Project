@@ -1,203 +1,309 @@
-# Geek-Room-Hackathon-Project
+# 🚀 Local Explorer - Your AI-Powered City Companion
 
-# 🌍 Local Explorer – AI-Powered Travel Companion Web App
+A modern travel app that provides real-time, personalized suggestions for food, sightseeing, and events using AI technology, location services, and comprehensive APIs.
 
-> ✈️ Discover your city like never before. Get personalized sightseeing, food, and event suggestions from an AI travel assistant — powered by Omni Dimension AI.
+## ✨ Features
 
-## Local Explorer Hero
-![Image](https://github.com/user-attachments/assets/67d17289-842c-471b-84d9-24e9ea6d2c5f)
+### 🎨 Frontend (React + TypeScript)
+- **3D Interactive Landing Page** with animated globe and floating travel icons
+- **Glassmorphism UI Design** with warm sunset gradients and smooth animations
+- **Authentication System** with Google OAuth integration
+- **Interactive Dashboard** with personalized recommendations
+- **AI Chatbot** with voice input support (Web Speech API)
+- **Calendar Integration** for trip planning and itinerary management
+- **Interactive Maps** with POI markers and real-time location
+- **Weather Widget** with travel suggestions
+- **Responsive Design** optimized for all devices
 
----
+### 🔧 Backend (Node.js + Express + MongoDB)
+- **RESTful API** with comprehensive endpoints
+- **JWT Authentication** with secure user management
+- **Real-time Recommendations** using multiple APIs:
+  - Google Places API
+  - OpenTripMap API
+  - Foursquare Places API
+- **AI Chat Integration** with OpenAI GPT-4
+- **Calendar Sync** with Google Calendar API
+- **Rate Limiting** and security middleware
+- **MongoDB Integration** with Mongoose ODM
 
-## 📽️ Demo Video
-
-Watch the walkthrough here 👉 : (https://www.loom.com/share/c6a40394ad7c4b2e9416a875354062a0?sid=8817ac71-6c1f-4496-9e88-2822a2ebdbc5)
-
----
-
-## 🌐 Live Preview
-
-Visit the deployed app here 👉 (https://imaginative-fudge-ceeb95.netlify.app)
-
----
-
-## 🔗 Omni Dimension AI Integration
-
-> Huge thanks to [**Omni Dimension AI**](https://omnidim.io) for enabling voice + chat-based travel planning.
-
-We integrated their web widget with this snippet:
-
-```html
-<script id="omnidimension-web-widget" async src="https://backend.omnidim.io/web_widget.js?secret_key=YOUR_SECRET_KEY"></script>
+## 🏗️ Project Structure
 
 ```
+local-explorer/
+├── frontend/                   # React TypeScript Frontend
+│   ├── src/
+│   │   ├── components/         # Reusable UI components
+│   │   │   ├── Navbar.tsx
+│   │   │   ├── Globe3D.tsx
+│   │   │   ├── ChatBot.tsx
+│   │   │   ├── MapComponent.tsx
+│   │   │   ├── RecommendationCard.tsx
+│   │   │   ├── FilterPanel.tsx
+│   │   │   └── WeatherWidget.tsx
+│   │   ├── pages/              # Main application pages
+│   │   │   ├── LandingPage.tsx
+│   │   │   ├── LoginPage.tsx
+│   │   │   ├── RegisterPage.tsx
+│   │   │   ├── Dashboard.tsx
+│   │   │   └── CalendarView.tsx
+│   │   ├── context/            # React Context providers
+│   │   │   ├── AuthContext.tsx
+│   │   │   └── LocationContext.tsx
+│   │   ├── services/           # API service functions
+│   │   │   └── authService.ts
+│   │   ├── types/              # TypeScript type definitions
+│   │   │   ├── User.ts
+│   │   │   └── Place.ts
+│   │   └── App.tsx
+│   ├── package.json
+│   └── tailwind.config.js
+├── backend/                    # Node.js Express Backend
+│   ├── src/
+│   │   ├── models/             # MongoDB schemas
+│   │   │   └── User.ts
+│   │   ├── routes/             # API route handlers
+│   │   │   ├── auth.ts
+│   │   │   ├── user.ts
+│   │   │   ├── recommendations.ts
+│   │   │   ├── calendar.ts
+│   │   │   └── ai.ts
+│   │   ├── middleware/         # Express middleware
+│   │   │   ├── auth.ts
+│   │   │   ├── errorHandler.ts
+│   │   │   └── notFound.ts
+│   │   ├── controllers/        # Business logic
+│   │   ├── services/           # External API integrations
+│   │   └── index.ts
+│   ├── package.json
+│   └── tsconfig.json
+└── README.md
+```
 
-## 📌 About the Project
+## 🚀 Quick Start
 
-**Local Explorer** is a fully responsive, AI-integrated travel assistant web application that helps tourists:
+### Prerequisites
+- Node.js 18+ and npm
+- MongoDB (local or MongoDB Atlas)
+- API Keys for external services
 
-- Discover nearby attractions, food, and events
-- Plan their itinerary with a calendar sync
-- Get real-time suggestions via chat or voice from an AI assistant
-- Enjoy a beautiful 3D background experience across every page
+### Environment Setup
 
-All of this is wrapped in a smooth, modern UI designed for both desktop and mobile travelers.
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd local-explorer
+   ```
 
----
+2. **Backend Setup**
+   ```bash
+   cd backend
+   npm install
+   cp .env.example .env
+   # Edit .env with your configuration
+   npm run dev
+   ```
 
-## 🧠 Features
+3. **Frontend Setup**
+   ```bash
+   cd frontend
+   npm install
+   npm start
+   ```
 
-### ✅ Intelligent AI Chatbot (Omni Dimension)
-- Fully integrated AI chatbot powered by **Omni Dimension AI**
-- Voice-based interaction using speech recognition
-- Suggests places, estimates trip costs, and adds to itinerary
+### Environment Variables
 
-### ✅ 3D Animated Background
-- Built using **Three.js** / Spline
-- Seamless animations across all pages
-- Parallax effects for immersive travel vibes
+Create `.env` files with the following variables:
 
-### ✅ User Authentication
-- JWT-based login and register
-- Google OAuth support
-
-### ✅ Personalized Dashboard
-- Real-time food, sightseeing, and events recommendations
-- Filters for budget, distance, and time
-- Cards with "Add to Calendar" and "Map" buttons
-
-### ✅ Explore by City
-- Select a city to view tourist places, food spots, and detailed info
-- Includes city description, ratings, maps, and entry costs
-- Data fetched from free APIs and mock backend
-
----
-
-## 🧰 Tech Stack
-
-| Frontend | Backend | APIs & Services |
-|----------|---------|-----------------|
-| React.js + Tailwind CSS | Node.js + Express.js | OpenTripMap API |
-| Three.js (3D background) | MongoDB (Mongoose) | Google Places API |
-| Framer Motion (animations) | JWT Auth | Google Calendar API |
-| Omni Dimension AI Widget | REST APIs | GeoDB / Teleport API |
-
----
-
-🚀 Step-by-Step: Run Local Explorer Locally
-
-✅ 1. Clone the Repository
-Open your terminal and run:
-
-bash
-Copy
-Edit
-git clone https://github.com/your-username/local-explorer.git
-cd local-explorer
-
-✅ 2. Set Up the Backend
-📁 Navigate to backend folder:
-bash
-Copy
-Edit
-cd backend
-📦 Install dependencies:
-bash
-Copy
-Edit
-npm install
-🗝️ Create .env file in /backend:
-bash
-Copy
-Edit
-touch .env
-Paste the following variables and replace with your actual values:
-
-env
-Copy
-Edit
+**Backend (.env)**
+```env
 PORT=5000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_super_secret_key
-▶️ Start the backend server:
-bash
-Copy
-Edit
-npm run dev
-The backend will now be running at: http://localhost:5000
+NODE_ENV=development
+MONGODB_URI=mongodb://localhost:27017/local-explorer
+JWT_SECRET=your-super-secret-jwt-key-here
+GOOGLE_PLACES_API_KEY=your-google-places-api-key
+OPENWEATHER_API_KEY=your-openweather-api-key
+OPENAI_API_KEY=your-openai-api-key
+FRONTEND_URL=http://localhost:3000
+```
 
-✅ 3. Set Up the Frontend
-📁 Open a new terminal and go to frontend:
-bash
-Copy
-Edit
-cd ../frontend
-📦 Install frontend dependencies:
-bash
-Copy
-Edit
-npm install
-🗝️ Create .env file in /frontend:
-bash
-Copy
-Edit
-touch .env
-Paste the following environment variables:
+**Frontend (.env)**
+```env
+REACT_APP_API_URL=http://localhost:5000/api
+REACT_APP_MAPBOX_TOKEN=your-mapbox-access-token
+```
 
-env
-Copy
-Edit
-VITE_BACKEND_URL=http://localhost:5000
-VITE_OMNI_DIMENSION_KEY=your_widget_key
-VITE_GOOGLE_MAPS_API_KEY=your_google_maps_key
-Update the API keys with real ones from Google Cloud Console and Omni Dimension AI.
+## 📱 Core Features
 
-▶️ Start the frontend:
-bash
-Copy
-Edit
-npm run dev
-The frontend will now be running at: http://localhost:5173
+### 🎯 Personalized Recommendations
+- AI-powered suggestions based on user preferences
+- Real-time location and weather consideration
+- Multi-source data aggregation (Google Places, OpenTripMap, Foursquare)
+- Smart filtering by category, budget, distance, and availability
 
-✅ 4. Visit the Application
-Open your browser and go to:
+### 🗣️ AI Chatbot & Voice Assistant
+- Natural language processing for travel queries
+- Voice input using Web Speech API
+- Contextual responses with location awareness
+- Integration with Omni Dimension AI widget for enhanced capabilities
 
-arduino
-Copy
-Edit
-http://localhost:5173
-You should see the Local Explorer landing page with:
+### 🗓️ Smart Calendar Integration
+- Google Calendar-style interface
+- Automated itinerary generation
+- Event suggestions based on optimal timing
+- Sync with Google Calendar API
 
-🧭 3D animated background
+### 🗺️ Interactive Maps
+- Real-time location tracking
+- Animated POI markers with category color coding
+- Click-to-explore functionality
+- Route optimization and directions
 
-🗣️ Omni Dimension AI chatbot (bottom right)
+### 🌤️ Weather Integration
+- Current weather conditions and forecasts
+- Weather-based activity suggestions
+- Location-aware weather data
 
-🗺️ City explorer interface
+## 🔧 Technology Stack
 
-🔐 Login and Register options
+### Frontend Technologies
+- **React 18** with TypeScript
+- **TailwindCSS** for styling with custom animations
+- **Framer Motion** for smooth animations
+- **Three.js & React Three Fiber** for 3D graphics
+- **React Router** for navigation
+- **Axios** for API communication
+- **React Context** for state management
 
-✅ 5. Test Functionalities
-✅ Register/Login
+### Backend Technologies
+- **Node.js & Express** for server framework
+- **MongoDB & Mongoose** for database
+- **JWT** for authentication
+- **bcryptjs** for password hashing
+- **Helmet & CORS** for security
+- **Rate Limiting** for API protection
 
-✅ Select a city and view tourist places
+### External APIs & Services
+- **Google Places API** - POI data and details
+- **OpenTripMap API** - Tourist attractions
+- **Google Calendar API** - Calendar integration
+- **OpenWeather API** - Weather data
+- **OpenAI GPT-4** - AI chatbot capabilities
+- **Web Speech API** - Voice recognition
 
-✅ Try chatting with the Omni AI assistant
+## 🔐 Security Features
 
-✅ Add locations to itinerary/calendar
+- JWT-based authentication with secure token handling
+- Password hashing with bcryptjs
+- Rate limiting to prevent abuse
+- CORS configuration for cross-origin requests
+- Helmet.js for security headers
+- Input validation with Joi
+- Error handling middleware
 
-✅ Explore routes on the map
+## 📊 API Endpoints
 
-🧪 Optional: Connect to MongoDB Atlas (Cloud)
-If you don’t want to use local MongoDB, go to MongoDB Atlas, create a free cluster, and update your .env file in the backend with the cloud connection string.
+### Authentication
+- `POST /api/auth/register` - User registration
+- `POST /api/auth/login` - User login
+- `POST /api/auth/google` - Google OAuth login
+- `GET /api/auth/me` - Get current user
 
-🛠️ Troubleshooting Tips
-Problem	Solution
-Blank screen	Check browser console for component or route errors
-Omni AI not responding	Ensure HTTPS or localhost is used; allow microphone access
-Backend not connecting	Check CORS and VITE_BACKEND_URL in frontend .env
-Calendar not syncing	Ensure Google API credentials are set properly
+### Recommendations
+- `GET /api/recommendations` - Get personalized recommendations
+- `POST /api/recommendations/filter` - Filter recommendations
 
-Made with ❤️ for Hackathons, Travelers, and Explorers ✈️
+### Calendar
+- `GET /api/calendar/events` - Get user events
+- `POST /api/calendar/add` - Add new event
+- `PUT /api/calendar/:id` - Update event
+- `DELETE /api/calendar/:id` - Delete event
+
+### AI Chat
+- `POST /api/ai/chat` - Send message to AI assistant
+
+### User Management
+- `GET /api/user/preferences` - Get user preferences
+- `PUT /api/user/preferences` - Update preferences
+- `GET /api/user/saved` - Get saved places
+- `POST /api/user/save` - Save a place
+
+## 🎨 Design System
+
+### Color Palette
+- **Primary**: Warm oranges (#ff6b35, #ff8a4c, #ed5a2b)
+- **Secondary**: Ocean teals (#14b8a6, #2dd4bf, #0d9488)
+- **Neutral**: Clean grays for text and backgrounds
+- **Gradients**: Sunset-inspired gradients for backgrounds
+
+### Typography
+- **Font**: Inter (Google Fonts)
+- **Hierarchy**: Clear heading sizes with proper spacing
+- **Readability**: High contrast ratios for accessibility
+
+### Animations
+- **Framer Motion** for page transitions and micro-interactions
+- **Custom CSS animations** for floating elements
+- **Three.js animations** for 3D globe interactions
+- **Loading states** with skeleton screens
+
+## 🚀 Deployment
+
+### Frontend (Vercel)
+```bash
+cd frontend
+npm run build
+# Deploy to Vercel
+```
+
+### Backend (Railway/Render)
+```bash
+cd backend
+npm run build
+# Deploy to Railway or Render
+```
+
+### Database (MongoDB Atlas)
+- Set up MongoDB Atlas cluster
+- Configure connection string in environment variables
+
+## 🔄 Development Workflow
+
+1. **Start Backend**: `cd backend && npm run dev`
+2. **Start Frontend**: `cd frontend && npm start`
+3. **Access Application**: `http://localhost:3000`
+4. **API Health Check**: `http://localhost:5000/health`
+
+## 📈 Future Enhancements
+
+- [ ] Real-time collaborative trip planning
+- [ ] Social features (trip sharing, reviews)
+- [ ] Offline mode with local storage
+- [ ] Push notifications for events and recommendations
+- [ ] Multi-language support
+- [ ] Advanced analytics and insights
+- [ ] Integration with booking platforms
+- [ ] Augmented reality features for POI discovery
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙋‍♂️ Support
+
+For support, email support@localexplorer.com or join our Discord community.
+
+---
+
+**Local Explorer** - Discover your perfect adventure with AI-powered travel intelligence! 🌟✈️
 
 
 
